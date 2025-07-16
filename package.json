@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/bundle.js",
+  "build": "esbuild src/index.tsx --bundle --minify --sourcemap --define:process.env.NODE_ENV=\\\"production\\\" --outfile=dist/bundle.js && cp public/index.html dist/index.html",
     "build:dev": "node esbuild.dev.js",
     "start": "node esbuild.config.js -w",
     "open": "open public/index.html",
